@@ -4,7 +4,7 @@ let path = require('path')
 
 let app = express()
 
-app.use(express.static(path.join(__dirname, 'content'))) // serves this file as a static content
+app.use(express.static(path.join(__dirname, 'content')))
 
 app.use('/api', routes)
 
