@@ -5,6 +5,12 @@ let router = express.Router()
 
 let stateData = require('./state_fact.json')
 
+// Permit requests from fetch requests in browsers 
+router.use(function(req, res, next) {
+    res.set('Access-Control-Allow-Origin', '*')
+    next()
+})
+
 router.get('/about', function(req, res, next) {
     return res.json({
         'about': 'A state fact API to share interesting informations about the different states of the United States Of America'
